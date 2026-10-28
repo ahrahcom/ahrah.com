@@ -1,0 +1,10 @@
+{
+  "name": "Ahrah",
+  "short_name": "Ahrah",
+  "description": "Software development, AI engineering, DevOps, testing, and delivery leadership for teams in the US, UK, Dubai, and India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#070b14",
+  "lang": "en"
+}

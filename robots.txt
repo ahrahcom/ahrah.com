@@ -1,0 +1,74 @@
+User-agent: *
+Allow: /
+Disallow: /archive/
+Disallow: /partials/
+Disallow: /tools/
+Disallow: /api/
+
+# Site summary for answer and AI systems
+# https://ahrah.com/llms.txt
+
+User-agent: GPTBot
+Allow: /
+Disallow: /archive/
+Disallow: /partials/
+Disallow: /tools/
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /archive/
+Disallow: /partials/
+Disallow: /tools/
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /archive/
+Disallow: /partials/
+Disallow: /tools/
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /archive/
+Disallow: /partials/
+Disallow: /tools/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /archive/
+Disallow: /partials/
+Disallow: /tools/
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /archive/
+Disallow: /partials/
+Disallow: /tools/
+Disallow: /api/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /archive/
+Disallow: /partials/
+Disallow: /tools/
+Disallow: /api/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /archive/
+Disallow: /partials/
+Disallow: /tools/
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /archive/
+Disallow: /partials/
+Disallow: /tools/
+Disallow: /api/
+
+Sitemap: https://ahrah.com/sitemap.xml

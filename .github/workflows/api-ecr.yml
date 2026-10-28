@@ -1,0 +1,82 @@
+# API-only CI/CD. Static site is not built here.
+#
+# GitHub → Settings → Secrets and variables → Actions → Secrets:
+#   AWS_ACCESS_KEY_ID
+#   AWS_SECRET_ACCESS_KEY
+#
+# Trigger: Actions → "API — Build and push ECR" → Run workflow.
+
+name: API — Build and push ECR
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  AWS_REGION: ap-south-1
+  AWS_ACCOUNT_ID: "122155425238"
+  ECR_REPOSITORY: ahrah-api
+  ECR_REGISTRY: 122155425238.dkr.ecr.ap-south-1.amazonaws.com
+
+jobs:
+  test_api:
+    name: Test API
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: api
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: api/package-lock.json
+
+      - run: npm ci
+      - run: npm test
+
+  build_and_push_ecr:
+    name: Build and push ECR
+    needs: test_api
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build, tag, and push
+        run: |
+          set -euo pipefail
+          VERSION="1.$(git rev-list --count HEAD)"
+          SHA="${GITHUB_SHA:0:7}"
+          IMAGE="${ECR_REGISTRY}/${ECR_REPOSITORY}"
+
+          echo "Building ${IMAGE}:${VERSION} :${SHA} :latest"
+          docker build \
+            -t "${IMAGE}:${VERSION}" \
+            -t "${IMAGE}:${SHA}" \
+            -t "${IMAGE}:latest" \
+            ./api
+
+          docker push "${IMAGE}:${VERSION}"
+          docker push "${IMAGE}:${SHA}"
+          docker push "${IMAGE}:latest"
+
+          echo "Pushed:"
+          echo "  ${IMAGE}:${VERSION}"
+          echo "  ${IMAGE}:${SHA}"
+          echo "  ${IMAGE}:latest"
