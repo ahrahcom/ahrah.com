@@ -2,19 +2,21 @@
   const root = document.documentElement;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const header = document.getElementById("site-header");
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("site-menu");
+  function bindChrome() {
+    const header = document.getElementById("site-header");
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("site-menu");
+    if (!toggle || !menu || toggle.dataset.bound) return;
+    toggle.dataset.bound = "1";
 
-  function setMenu(open) {
-    menu.classList.toggle("is-open", open);
-    document.body.classList.toggle("menu-open", open);
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    if (open) setTimeout(function () { menu.querySelector("a").focus({ preventScroll: true }); }, 60);
-  }
+    function setMenu(open) {
+      menu.classList.toggle("is-open", open);
+      document.body.classList.toggle("menu-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      if (open) setTimeout(function () { menu.querySelector("a").focus({ preventScroll: true }); }, 60);
+    }
 
-  if (toggle && menu) {
     menu.hidden = false;
     toggle.addEventListener("click", function () {
       setMenu(!menu.classList.contains("is-open"));
@@ -28,13 +30,16 @@
         toggle.focus();
       }
     });
+
+    function onScroll() {
+      if (header) header.classList.toggle("is-scrolled", window.scrollY > 24);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
   }
 
-  function onScroll() {
-    if (header) header.classList.toggle("is-scrolled", window.scrollY > 24);
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  bindChrome();
+  document.addEventListener("ahrah:header", bindChrome);
 
   document.querySelectorAll(".split").forEach(function (el) {
     const words = el.textContent.trim().split(/\s+/);

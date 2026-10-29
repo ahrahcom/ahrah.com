@@ -5,7 +5,7 @@ export const LOGO_CID = "ahrah-logo@ahrah.com";
 const AHRAH = {
   legal: "Ahrah Technologies LLP",
   email: "business@ahrah.com",
-  phone: "+91 94448 88327",
+  phone: "+91 97517 35774",
   phoneHref: "tel:+919444888327",
   place: "India",
   markets: "US · UK · Dubai · Tamilnadu, India",
