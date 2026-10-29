@@ -1,6 +1,8 @@
 (function () {
   const script = document.currentScript;
   const base = script && script.src ? script.src.replace(/js\/components\.js.*$/, "") : "/";
+  const version = (script && script.src.match(/[?&]v=([^&]+)/) || [])[1];
+  const qs = version ? "?v=" + encodeURIComponent(version) : "";
 
   function pageKey() {
     const file = (location.pathname.replace(/\/+$/, "") || "/index.html").split("/").pop() || "index.html";
@@ -28,7 +30,7 @@
   function load(el, file, eventName) {
     if (el.dataset.ready) return;
     el.dataset.ready = "1";
-    fetch(base + "partials/" + file, { cache: "force-cache" })
+    fetch(base + "partials/" + file + qs, { cache: "force-cache" })
       .then(function (res) {
         if (!res.ok) throw new Error(file);
         return res.text();
