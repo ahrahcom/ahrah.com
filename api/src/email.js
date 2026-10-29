@@ -7,8 +7,8 @@ const AHRAH = {
   email: "business@ahrah.com",
   phone: "+91 94448 88327",
   phoneHref: "tel:+919444888327",
-  place: "Palacode, Tamil Nadu, India",
-  markets: "US · UK · Dubai · India",
+  place: "India",
+  markets: "US · UK · Dubai · Tamilnadu, India",
   tag: "US · UK · DXB · IN",
   site: "https://ahrah.com",
   linkedin: "https://www.linkedin.com/in/ahrah"

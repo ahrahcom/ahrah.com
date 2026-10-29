@@ -1,0 +1,20 @@
+services:
+  server:
+    image: 122155425238.dkr.ecr.ap-south-1.amazonaws.com/ahrah-api:1.2
+    container_name: ahrah-api
+    ports:
+      - "127.0.0.1:8787:8787"
+    env_file:
+      - api.env
+    environment:
+      NODE_ENV: production
+      HOST: "0.0.0.0"
+      PORT: "8787"
+      TRUST_PROXY: "1"
+    restart: always
+    networks:
+      - ahrah-net
+
+networks:
+  ahrah-net:
+    driver: bridge

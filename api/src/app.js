@@ -23,7 +23,7 @@ export function createApp({ config, sendMail, now = () => Date.now() }) {
         res.setHeader("Vary", "Origin");
       }
 
-      if (path === "/api/health" && req.method === "GET") {
+      if ((path === "/" || path === "/api/health") && req.method === "GET") {
         return send(res, 200, { ok: true });
       }
 

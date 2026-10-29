@@ -202,7 +202,7 @@
       ].join("\n");
       const mailto = "mailto:business@ahrah.com?subject=" + encodeURIComponent("Ahrah project enquiry from " + payload.company) + "&body=" + encodeURIComponent(mailtoBody);
       const local = location.hostname === "localhost" || location.hostname === "127.0.0.1";
-      const apiBase = local ? "http://127.0.0.1:8787" : (form.getAttribute("data-api") || "").replace(/\/$/, "");
+      const apiBase = local ? "http://127.0.0.1:8787" : "https://api.ahrah.com";
       const endpoint = apiBase + "/api/contact";
       const button = form.querySelector("button[type=submit]");
       if (button) button.disabled = true;

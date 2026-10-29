@@ -18,6 +18,17 @@ export function loadEnvFile(file) {
   }
 }
 
+function inDocker() {
+  return fs.existsSync("/.dockerenv");
+}
+
+function listenHost() {
+  const host = process.env.HOST || (inDocker() ? "0.0.0.0" : "127.0.0.1");
+  // 127.0.0.1 inside a container is not the host loopback, so docker -p never reaches the app.
+  if (inDocker() && (host === "127.0.0.1" || host === "::1")) return "0.0.0.0";
+  return host;
+}
+
 function clamp(raw, min, max, fallback) {
   const value = Number(raw);
   if (!Number.isFinite(value)) return fallback;
@@ -35,7 +46,7 @@ export function readConfig() {
   }
   return {
     nodeEnv,
-    host: process.env.HOST || "127.0.0.1",
+    host: listenHost(),
     port: clamp(process.env.PORT, 1, 65535, 8787),
     origins: new Set(origins),
     trustProxy: process.env.TRUST_PROXY === "1",

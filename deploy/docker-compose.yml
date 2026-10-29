@@ -1,0 +1,30 @@
+# On the server: /opt/ahrah-api/docker-compose.yml
+# Put production env next to it as /opt/ahrah-api/.env (never commit that file).
+
+services:
+  ahrah-api:
+    image: 122155425238.dkr.ecr.ap-south-1.amazonaws.com/ahrah-api:latest
+    container_name: ahrah-api
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8787:8787"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      HOST: "0.0.0.0"
+      PORT: "8787"
+      TRUST_PROXY: "1"
+      HSTS: "0"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:8787/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
