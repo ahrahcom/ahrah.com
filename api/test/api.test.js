@@ -186,7 +186,7 @@ test("the visitor cannot choose who receives the email", () => {
   assert.equal(options.html.includes("A&amp;B Labs"), true);
   assert.equal(options.html.includes("cid:ahrah-logo@ahrah.com"), true);
   assert.equal(options.html.includes("business@ahrah.com"), true);
-  assert.equal(options.html.includes("+91 97517 35774"), true);
+  assert.equal(options.html.includes("+1 213-802-0513"), true);
   assert.equal(options.html.includes("Ahrah Technologies LLP"), true);
   assert.equal(options.text.includes("Ada Lovelace"), true);
   assert.equal(options.text.includes("28 October 2026"), true);
