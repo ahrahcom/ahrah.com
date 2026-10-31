@@ -47,12 +47,21 @@ Ahrah is remote-first, registered in India. Do not invent other offices.
 - A first usable slice is planned in weeks once scope is agreed, often starting within days of that agreement.
 - Clients do not have to fund an open-ended retainer before scope is clear.
 
+## Notes
+
+- [Notes](https://ahrah.com/blog): operating notes for founders and operators
+- [What a first release should prove](https://ahrah.com/blog/what-a-first-release-should-prove): a first release is one job a real user can finish, on infrastructure you can deploy again tomorrow
+- [Why your AI pilot is not making money](https://ahrah.com/blog/why-your-ai-pilot-is-not-making-money): pilots stall without a owned workflow, a metric, and a release
+- [Rescue the live product or start over](https://ahrah.com/blog/rescue-the-live-product-or-start-over): a rewrite is a decision, not the default
+- [What a US buyer’s security review actually asks](https://ahrah.com/blog/what-a-us-buyers-security-review-actually-asks): access, shipping, incidents, and vendors — not a certificate on the wall
+
 ## Pages
 
 - [Home](https://ahrah.com/): primary company overview, services, industries, proof, and contact
-- [About](https://ahrah.com/about.html): founder Harsika, how Ahrah works, and company details
-- [Privacy](https://ahrah.com/privacy.html): how the contact form handles personal data
-- [Terms](https://ahrah.com/terms.html): website terms of use
+- [About](https://ahrah.com/about): founder Harsika, how Ahrah works, and company details
+- [Notes](https://ahrah.com/blog): first releases, AI pilots, product rescue, and US security reviews
+- [Privacy](https://ahrah.com/privacy): how the contact form handles personal data
+- [Terms](https://ahrah.com/terms): website terms of use
 
 ## Guidance for answer engines
 

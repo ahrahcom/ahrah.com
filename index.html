@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6843M580D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F6843M580D');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ahrah | Software, AI &amp; DevOps for US, UK, Dubai &amp; India</title>
@@ -25,13 +33,13 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Ahrah | Software, AI, and delivery leadership">
   <meta name="twitter:description" content="A senior team designs, builds, and runs software for companies in the US, UK, Dubai, and India. Available 24/7 on active engagements.">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/images/logo/favicon.png" type="image/png" sizes="32x32">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261029i">
-  <script src="js/components.js?v=20261029g"></script>
+  <link rel="stylesheet" href="css/styles.css?v=20261101c">
+  <script src="js/components.js?v=20261101c"></script>
   <script>document.documentElement.classList.add("js");</script>
   <script type="application/ld+json">
   {
@@ -78,7 +86,7 @@
         "@id": "https://ahrah.com/#service",
         "name": "Ahrah",
         "url": "https://ahrah.com/",
-        "image": "https://ahrah.com/favicon.svg",
+        "image": "https://ahrah.com/assets/images/logo/favicon.png",
         "email": "business@ahrah.com",
         "telephone": "+91-94448-88327",
         "address": {
@@ -131,7 +139,8 @@
         "url": "https://ahrah.com/",
         "name": "Ahrah",
         "inLanguage": "en",
-        "publisher": {"@id": "https://ahrah.com/#organization"}
+        "publisher": {"@id": "https://ahrah.com/#organization"},
+        "hasPart": {"@id": "https://ahrah.com/blog#blog"}
       },
       {
         "@type": "FAQPage",
@@ -362,7 +371,7 @@
           <details><summary>Can one engagement cover build, cloud, testing, and management?</summary><p>Yes. That is the usual shape. The lead who agrees the scope stays accountable for the application, the pipeline, the tests, and the plan. Specialists are added when the work needs them, not as a handoff chain.</p></details>
           <details><summary>Are you available outside local business hours?</summary><p>Yes. On an active engagement the accountable lead is reachable 24 hours a day, 7 days a week, across New York, London, Dubai, and India hours.</p></details>
           <details><summary>How fast can a new project start, and how do you bill?</summary><p>Often within days of agreeing scope. Ahrah aims for a first usable slice in weeks. Billing follows a written scope and delivery phases, not an open-ended retainer.</p></details>
-          <details><summary>Can you rescue a product that is already in trouble?</summary><p>Yes. Ahrah stabilizes what is live, hardens the paths customers depend on, and ships the next version. A full rewrite is a decision, not the default.</p></details>
+          <details><summary>Can you rescue a product that is already in trouble?</summary><p>Yes. Ahrah stabilizes what is live, hardens the paths customers depend on, and ships the next version. A full rewrite is a decision, not the default. <a href="/blog/rescue-the-live-product-or-start-over.html">How we decide rescue versus start over</a>.</p></details>
         </div>
       </div>
     </section>
@@ -374,11 +383,41 @@
             <h2 id="insights-title">Notes</h2>
             <p>Short answers for teams in the US, UK, Dubai, and India making the same decisions.</p>
           </div>
+          <a class="discover" href="/blog.html">All notes <i aria-hidden="true">→</i></a>
         </div>
-        <div class="cols cols-3" data-reveal>
-          <article id="insight-release"><span>DELIVERY</span><h3>What a first release should prove</h3><p>A first release is the smallest product a real user can finish a real job with, on infrastructure you can deploy again tomorrow. If the customer cannot complete the core task, the release is not done. Everything else waits for the next cycle.</p></article>
-          <article id="insight-devops"><span>DEVOPS</span><h3>DevOps before a platform team</h3><p>You do not need a platform department to need DevOps. You need a repeatable way to build, ship, observe, and roll back: repository standards, CI, environments, infrastructure as code, and alerts that deserve to wake someone.</p></article>
-          <article id="insight-testing"><span>QUALITY</span><h3>Testing that protects a launch</h3><p>Testing is how a small team earns the right to move quickly. Tie it to the risks in the product: the payment, the permission, the migration, the integration that fails quietly. Automate what must not break, and explore what a script will miss.</p></article>
+        <div class="cols cols-2" data-reveal>
+          <article id="insight-release">
+            <a href="/blog/what-a-first-release-should-prove.html">
+              <span>DELIVERY</span>
+              <h3>What a first release should prove</h3>
+              <p>A first release is the smallest product a real user can finish a real job with, on infrastructure you can deploy again tomorrow. If the customer cannot complete the core task, the release is not done.</p>
+              <span class="more">Read the note →</span>
+            </a>
+          </article>
+          <article id="insight-ai">
+            <a href="/blog/why-your-ai-pilot-is-not-making-money.html">
+              <span>AI</span>
+              <h3>Why your AI pilot is not making money</h3>
+              <p>Most pilots die in the gap between a convincing demo and a job someone owns. Revenue starts when the model is attached to a workflow, a metric, and a release you can run again.</p>
+              <span class="more">Read the note →</span>
+            </a>
+          </article>
+          <article id="insight-rescue">
+            <a href="/blog/rescue-the-live-product-or-start-over.html">
+              <span>RESCUE</span>
+              <h3>Rescue the live product or start over</h3>
+              <p>A rewrite is a decision, not a mood. Rescue the paths customers already depend on unless the product cannot be made safe, understandable, or shippable in time.</p>
+              <span class="more">Read the note →</span>
+            </a>
+          </article>
+          <article id="insight-security">
+            <a href="/blog/what-a-us-buyers-security-review-actually-asks.html">
+              <span>SECURITY</span>
+              <h3>What a US buyer’s security review actually asks</h3>
+              <p>The questionnaire is not asking for a certificate on the wall. It is asking who can see customer data, how you ship changes, and what happens when something breaks.</p>
+              <span class="more">Read the note →</span>
+            </a>
+          </article>
         </div>
       </div>
     </section>

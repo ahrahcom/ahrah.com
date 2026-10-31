@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6843M580D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F6843M580D');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notes | First releases, AI pilots, rescue, and US security reviews</title>
+  <meta name="description" content="Short operating notes for founders shipping software: what a first release should prove, why AI pilots stall, when to rescue a live product, and what US buyers ask in a security review.">
+  <meta name="keywords" content="software first release, AI pilot ROI, product rescue vs rewrite, US buyer security review, startup software delivery, Ahrah">
+  <meta name="author" content="Harsika, Ahrah Technologies LLP">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://ahrah.com/blog">
+  <link rel="alternate" hreflang="en" href="https://ahrah.com/blog">
+  <link rel="alternate" hreflang="en-us" href="https://ahrah.com/blog">
+  <link rel="alternate" hreflang="en-gb" href="https://ahrah.com/blog">
+  <link rel="alternate" hreflang="x-default" href="https://ahrah.com/blog">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ahrah">
+  <meta property="og:title" content="Notes from Ahrah">
+  <meta property="og:description" content="Operating notes for founders: first releases, AI pilots, product rescue, and US buyer security reviews.">
+  <meta property="og:url" content="https://ahrah.com/blog">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://ahrah.com/assets/images/logo/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notes from Ahrah">
+  <meta name="twitter:description" content="Operating notes for founders shipping software and AI products.">
+  <meta name="twitter:image" content="https://ahrah.com/assets/images/logo/og.png">
+  <link rel="icon" href="/assets/images/logo/favicon.png" type="image/png" sizes="32x32">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=20261101c">
+  <script src="/js/components.js?v=20261101c"></script>
+  <script>document.documentElement.classList.add("js");</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://ahrah.com/blog#page",
+        "url": "https://ahrah.com/blog",
+        "name": "Notes",
+        "description": "Operating notes for founders and operators shipping software and AI products.",
+        "inLanguage": "en",
+        "isPartOf": {"@id": "https://ahrah.com/#website"},
+        "about": {"@id": "https://ahrah.com/#organization"},
+        "primaryImageOfPage": "https://ahrah.com/assets/images/logo/og.png",
+        "mainEntity": {"@id": "https://ahrah.com/blog#blog"}
+      },
+      {
+        "@type": "Blog",
+        "@id": "https://ahrah.com/blog#blog",
+        "name": "Ahrah Notes",
+        "url": "https://ahrah.com/blog",
+        "inLanguage": "en",
+        "publisher": {"@id": "https://ahrah.com/#organization"},
+        "blogPost": [
+          {"@id": "https://ahrah.com/blog/what-a-first-release-should-prove#article"},
+          {"@id": "https://ahrah.com/blog/why-your-ai-pilot-is-not-making-money#article"},
+          {"@id": "https://ahrah.com/blog/rescue-the-live-product-or-start-over#article"},
+          {"@id": "https://ahrah.com/blog/what-a-us-buyers-security-review-actually-asks#article"}
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "numberOfItems": 4,
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "url": "https://ahrah.com/blog/what-a-first-release-should-prove", "name": "What a first release should prove"},
+          {"@type": "ListItem", "position": 2, "url": "https://ahrah.com/blog/why-your-ai-pilot-is-not-making-money", "name": "Why your AI pilot is not making money"},
+          {"@type": "ListItem", "position": 3, "url": "https://ahrah.com/blog/rescue-the-live-product-or-start-over", "name": "Rescue the live product or start over"},
+          {"@type": "ListItem", "position": 4, "url": "https://ahrah.com/blog/what-a-us-buyers-security-review-actually-asks", "name": "What a US buyer’s security review actually asks"}
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://ahrah.com/#organization",
+        "name": "Ahrah",
+        "legalName": "Ahrah Technologies LLP",
+        "url": "https://ahrah.com/",
+        "logo": "https://ahrah.com/assets/images/logo/logo.svg"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://ahrah.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Notes", "item": "https://ahrah.com/blog"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <site-header></site-header>
+
+  <main id="main">
+    <section class="hero hero-page" aria-labelledby="notes-title">
+      <div class="hero-center">
+        <p class="eyebrow">Notes</p>
+        <h1 id="notes-title" class="split">Decisions founders keep making the hard way.</h1>
+        <p class="hero-sub">Four operating notes for teams in the US, UK, Dubai, and India: first releases, AI pilots, live-product rescue, and the security review a US buyer actually runs.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="notes-list-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <h2 id="notes-list-title">Latest notes</h2>
+            <p>Written for operators. One job per note. No framework wars.</p>
+          </div>
+        </div>
+        <div class="cols cols-2" data-reveal>
+          <article>
+            <a href="/blog/what-a-first-release-should-prove.html">
+              <span>DELIVERY · 1 NOV 2026</span>
+              <h3>What a first release should prove</h3>
+              <p>A first release is the smallest product a real user can finish a real job with, on infrastructure you can deploy again tomorrow. If that is not true, the release is not done.</p>
+              <span class="more">Read the note →</span>
+            </a>
+          </article>
+          <article>
+            <a href="/blog/why-your-ai-pilot-is-not-making-money.html">
+              <span>AI · 1 NOV 2026</span>
+              <h3>Why your AI pilot is not making money</h3>
+              <p>Most pilots die in the gap between a convincing demo and a job someone owns. Revenue starts when the model is attached to a workflow, a metric, and a release you can run again.</p>
+              <span class="more">Read the note →</span>
+            </a>
+          </article>
+          <article>
+            <a href="/blog/rescue-the-live-product-or-start-over.html">
+              <span>RESCUE · 1 NOV 2026</span>
+              <h3>Rescue the live product or start over</h3>
+              <p>A rewrite is a decision, not a mood. Rescue the paths customers already depend on unless the product cannot be made safe, understandable, or shippable in time.</p>
+              <span class="more">Read the note →</span>
+            </a>
+          </article>
+          <article>
+            <a href="/blog/what-a-us-buyers-security-review-actually-asks.html">
+              <span>SECURITY · 1 NOV 2026</span>
+              <h3>What a US buyer’s security review actually asks</h3>
+              <p>The questionnaire is not asking for a certificate on the wall. It is asking who can see customer data, how you ship changes, and what happens when something breaks.</p>
+              <span class="more">Read the note →</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container cta-inner" data-reveal>
+        <h2 id="cta-title">Have one of these decisions on your desk?</h2>
+        <div class="cta-action">
+          <a class="pill-btn" href="/#contact">Let's talk about your project <i aria-hidden="true">→</i></a>
+          <em>30 minutes with a senior lead. No sales script.</em>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+  <script src="/js/main.js?v=20261029c"></script>
+</body>
+</html>

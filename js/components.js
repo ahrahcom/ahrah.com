@@ -5,19 +5,23 @@
   const qs = version ? "?v=" + encodeURIComponent(version) : "";
 
   function pageKey() {
-    const file = (location.pathname.replace(/\/+$/, "") || "/index.html").split("/").pop() || "index.html";
-    const name = file.replace(/\.html$/i, "");
-    return name === "" ? "index" : name.toLowerCase();
+    const path = location.pathname.replace(/\/+$/, "") || "/";
+    if (path === "/" || /\/index(\.html)?$/i.test(path)) return "index";
+    const file = path.split("/").pop() || "";
+    return file.replace(/\.html$/i, "").toLowerCase();
   }
 
   function markCurrent(root) {
     const key = pageKey();
-    const home = key === "index" || key === "ahrah.com";
+    const path = (location.pathname.replace(/\/+$/, "") || "/").toLowerCase();
+    const home = key === "index";
+    const onNotes = path === "/blog" || path === "/blog.html" || path.indexOf("/blog/") === 0;
     root.querySelectorAll("a[href]").forEach(function (link) {
       const raw = link.getAttribute("href") || "";
       if (raw.indexOf("#") !== -1) return;
-      const name = raw.split("/").pop().replace(/\.html$/i, "").toLowerCase();
+      const name = (raw.split("/").pop() || "").replace(/\.html$/i, "").toLowerCase();
       if (name && name === key) link.setAttribute("aria-current", "page");
+      if (onNotes && name === "blog") link.setAttribute("aria-current", "page");
     });
     if (home) {
       const logo = root.querySelector(".logo");
@@ -30,7 +34,7 @@
   function load(el, file, eventName) {
     if (el.dataset.ready) return;
     el.dataset.ready = "1";
-    fetch(base + "partials/" + file + qs, { cache: "force-cache" })
+    fetch(base + "partials/" + file + qs, { cache: "no-cache" })
       .then(function (res) {
         if (!res.ok) throw new Error(file);
         return res.text();

@@ -6,5 +6,12 @@
   "display": "standalone",
   "background_color": "#070b14",
   "theme_color": "#070b14",
-  "lang": "en"
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/assets/images/logo/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ]
 }
